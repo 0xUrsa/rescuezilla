@@ -1,4 +1,4 @@
-#  Rescuezilla v2.5.2 (2024-12-13)
+#  Rescuezilla v2.5.3 (2024-12-13)
 
 * Many existing translations updated, but also added:
   * Persian/فارسی (fa-IR) (in-progress)
