@@ -210,7 +210,6 @@ lang_codes=(
              "fa"
              "fi"
              "fr"
-             "ko"
              "id"
              "it"
              "he"

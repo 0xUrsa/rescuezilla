@@ -17,10 +17,13 @@ jobs:
           lfs: true
           fetch-depth: 0
 
+      - run: git fetch --depth=100
+
       # Extract human-readable version string from the most recent CHANGELOG entry
       - run: echo "RESCUEZILLA_RELEASE_NAME=\"$(git grep -h -E -o '[a-zA-Z].*)' CHANGELOG | head -1)\"" >> $GITHUB_ENV
       # Get deb package version using same command from its build scripts
-      - run: echo "DEB_VERSION=$(git describe --tags  --match='[0-9].[0-9]*' --abbrev=0)" >> $GITHUB_ENV
+      # - run: echo "DEB_VERSION=$(git describe --tags  --match='[0-9].[0-9]*' --abbrev=0)" >> $GITHUB_ENV
+      - run: echo "DEB_VERSION=2.5.2" >> $GITHUB_ENV
 
       - name: Build Docker image
         run: make docker-build
@@ -137,4 +140,3 @@ jobs:
         with:
           name: rescuezilla-${{github.ref_name}}-32bit.bionic.iso
           path: completed-artifacts/rescuezilla-${{github.ref_name}}-32bit.bionic.iso
-
